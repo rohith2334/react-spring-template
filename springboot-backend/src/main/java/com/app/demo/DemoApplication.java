@@ -1,4 +1,4 @@
-package com.manve.demo;
+package com.app.demo;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
