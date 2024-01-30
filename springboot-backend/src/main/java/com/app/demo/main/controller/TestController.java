@@ -1,4 +1,4 @@
-package com.app.demo.common.controllers;
+package com.app.demo.main.controller;
 
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.CrossOrigin;
