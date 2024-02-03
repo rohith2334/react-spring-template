@@ -36,5 +36,6 @@ services:
     volumes:
       - ./init-mongo.js:/docker-entrypoint-initdb.d/init-mongo.js:ro
 
+
 networks:
   backend:
