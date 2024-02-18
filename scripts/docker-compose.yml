@@ -9,6 +9,8 @@ services:
       - "3000:3000"
     depends_on:
       - springboot-backend
+    volumes:
+      - ../scripts/database:/app/database
     networks:
       - backend
 
@@ -17,15 +19,15 @@ services:
       context: ../springboot-backend
     container_name: springboot-backend
     depends_on:
-      - mongo-db
+      - mongodb
     ports:
       - "8080:8080"
     networks:
       - backend
 
-  mongo-db:
+  mongodb:
     image: mongo:latest
-    container_name: mongo-db
+    container_name: mongodb
     ports:
       - "27017:27017"
     networks:
@@ -33,7 +35,7 @@ services:
     environment:
       MONGO_INITDB_ROOT_USERNAME: root
       MONGO_INITDB_ROOT_PASSWORD: example
-    volumes:
+    volumes: 
       - ./init-mongo.js:/docker-entrypoint-initdb.d/init-mongo.js:ro
 
 

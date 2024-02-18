@@ -10,8 +10,12 @@ COPY package*.json ./
 # Install dependencies
 RUN npm install
 
+RUN npm install mongodb
+
 # Copy the remaining application code to the working directory
 COPY . .
+
+RUN chmod +x start.sh
 
 # Build the React app
 RUN npm run build
@@ -20,4 +24,4 @@ RUN npm run build
 EXPOSE 3000
 
 # Command to run the application
-CMD ["npm", "start"]
+CMD ["./start.sh"]
