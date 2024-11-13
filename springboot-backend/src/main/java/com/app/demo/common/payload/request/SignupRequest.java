@@ -3,9 +3,16 @@ package com.app.demo.common.payload.request;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.util.Set;
 
+
+@AllArgsConstructor
+@NoArgsConstructor
+@Data
 public class SignupRequest {
   @NotBlank
   @Size(min = 3, max = 20)
@@ -16,41 +23,14 @@ public class SignupRequest {
   @Email
   private String email;
 
-  private Set<String> roles;
+  private String role;
 
   @NotBlank
   @Size(min = 6, max = 40)
   private String password;
 
-  public String getUsername() {
-    return username;
-  }
+  private String profileImage;
 
-  public void setUsername(String username) {
-    this.username = username;
-  }
 
-  public String getEmail() {
-    return email;
-  }
 
-  public void setEmail(String email) {
-    this.email = email;
-  }
-
-  public String getPassword() {
-    return password;
-  }
-
-  public void setPassword(String password) {
-    this.password = password;
-  }
-
-  public Set<String> getRoles() {
-    return this.roles;
-  }
-
-  public void setRole(Set<String> roles) {
-    this.roles = roles;
-  }
 }
